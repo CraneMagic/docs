@@ -1,1 +1,14 @@
-site_name: My Docs
+site_name: CraneMagic 文档 | Docs
+theme:
+  name: material
+
+nav:
+  - 介绍: index.md
+  - MkDocs: mkdocs.md
+  
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css

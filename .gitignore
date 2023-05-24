@@ -1,0 +1,18 @@
+# Project exclude paths
+.idea
+.vscode
+venv
+__pycache__
+
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+cranemagic
+
+.env.*
+
+*.zip
+
+.vscode
