@@ -1,0 +1,1 @@
+[Docs Here](https://cranemagic.github.io/docs/)
