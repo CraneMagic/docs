@@ -4,6 +4,9 @@ theme:
 
 nav:
   - 介绍: index.md
+  - 设计:
+    - 整体架构: design/arch.md
+  - 更新日志: updates.md
   - MkDocs: mkdocs.md
   
 
