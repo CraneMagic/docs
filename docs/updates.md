@@ -8,18 +8,18 @@
 
 2. cranemagic-servers-tcp 接收钢板型号后，生成发送给 MQTT Broker 的 Payload 如下：
 
-```json
-{
-    "type": "scanner_status",
-    "steel_model": "xxxxxxxxx",
-    "current_time": "%Y-%m-%d %H:%M:%S",
-    "client_address": "IP:PORT",
-}
-```
+    ```json
+    {
+        "type": "scanner_status",
+        "steel_model": "xxxxxxxxx",
+        "current_time": "%Y-%m-%d %H:%M:%S",
+        "client_address": "IP:PORT",
+    }
+    ```
 
-其中 `type` 字段为枚举值，当前值 `scanner_status` 是标识当前有扫码枪扫入钢板型号的行为，另一值为 `scanner_inputs`，稍后详解其作用。
+    其中 `type` 字段为枚举值，当前值 `scanner_status` 是标识当前有扫码枪扫入钢板型号的行为，另一值为 `scanner_inputs`，稍后详解其作用。
 
-将本 Payload 发送至 MQTT Broker 下的 2 个 Topic：`iot/scanner_inputs`（用以与 cranmegic-service-mqtt 服务交互）和 `web/scanner_status`（用以向前端报告当前有扫码枪扫入钢板型号的行为）。
+    将本 Payload 发送至 MQTT Broker 下的 2 个 Topic：`iot/scanner_inputs`（用以与 cranmegic-service-mqtt 服务交互）和 `web/scanner_status`（用以向前端报告当前有扫码枪扫入钢板型号的行为）。
 
 3. 针对 MQTT 消息的处理
 
@@ -29,7 +29,9 @@
 
     b. cranemagic-service-mqtt 处理
 
-    接收到条码枪扫入的钢板型号，验证钢板型号是否存在，查询对中平台 In 的材料状况：
+    接收到条码枪扫入的钢板型号，验证钢板型号是否存在（目前的方式是查库位表中的`comment`）。
+
+    查询对中平台 In 的材料状况：
 
     **如果对中平台 In 没有材料**，则：
 
@@ -98,5 +100,5 @@
     }
     ```
 
-    iv. 前端弹出 notification，点击可请求 cranemagic-service-webapi 服务的 `mqttPublishCraneControl` 接口快速执行入库操作。
+    iv. 前端弹出 notification，...
 
