@@ -6,6 +6,9 @@ nav:
   - 介绍: index.md
   - 设计:
     - 整体架构: design/arch.md
+  - 技术细节:
+    - 通用组件:
+      - WebAPI: tech_details/common/cranemagic-service-webapi.md
   - 更新日志: updates.md
   - MkDocs: mkdocs.md
   
