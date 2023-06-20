@@ -2,6 +2,21 @@ site_name: CraneMagic 文档 | Docs
 theme:
   name: material
 
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.betterem
+  - markdown.extensions.footnotes
+  - markdown.extensions.attr_list
+  - markdown.extensions.def_list
+  - markdown.extensions.tables
+  - markdown.extensions.abbr
+  - markdown.extensions.md_in_html
+
 nav:
   - 介绍: index.md
   - 设计:
