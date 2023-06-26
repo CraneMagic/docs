@@ -19,6 +19,7 @@ markdown_extensions:
 
 nav:
   - 介绍: index.md
+  - 如何使用: hands-on.md
   - 设计:
     - 整体架构: design/arch.md
   - 技术细节:
